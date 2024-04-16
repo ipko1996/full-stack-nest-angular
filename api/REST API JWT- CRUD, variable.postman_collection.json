@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"ipko\",\r\n    \"password\": \"asdf\"\r\n}",
+							"raw": "{\r\n    \"username\": \"ipko3\",\r\n    \"password\": \"asdf\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -72,7 +72,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imlwa28iLCJzdWIiOiI2NjE1OWY3MTE4ZjEwNWM5OTcyYWQ3MTkiLCJpYXQiOjE3MTI3Mzc5OTUsImV4cCI6MTcxMzM0Mjc5NX0.mfLpv8TvGi1M04PFUN_OwDmyRxQYj8k6BI18yMyTsVk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imlwa28iLCJzdWIiOiI2NjE1OWY3MTE4ZjEwNWM5OTcyYWQ3MTkiLCJpYXQiOjE3MTMyOTQ5MDUsImV4cCI6MTcxMzg5OTcwNX0.f1U9t7p0-wrIn03pggdNXSGqnQy41rctpWfNVno7THQ",
 									"type": "string"
 								}
 							]
@@ -208,7 +208,7 @@
 		},
 		{
 			"key": "base_url",
-			"value": "http://localhost:3000"
+			"value": "http://localhost:3000/api"
 		}
 	]
 }
