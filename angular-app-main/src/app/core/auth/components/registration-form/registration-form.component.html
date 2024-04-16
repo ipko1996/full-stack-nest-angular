@@ -1,0 +1,48 @@
+<form class="form" [formGroup]="formGroup">
+  <div class="field">
+    <span class="p-float-label">
+      <input pInputText id="username" formControlName="username" />
+      <label for="username">Username</label>
+    </span>
+    <app-input-error-message
+      class="error-message"
+      [control]="formGroup.get('username')!"
+    ></app-input-error-message>
+  </div>
+
+  <div class="field">
+    <span class="p-float-label">
+      <p-password
+        formControlName="password"
+        [toggleMask]="true"
+        [feedback]="false"
+      ></p-password>
+      <label for="password">Password</label>
+    </span>
+    <app-input-error-message
+      class="error-message"
+      [control]="formGroup.get('password')!"
+    ></app-input-error-message>
+  </div>
+
+  <div class="field">
+    <span class="p-float-label">
+      <p-password
+        formControlName="passwordConfirmation"
+        [toggleMask]="true"
+        [feedback]="false"
+      ></p-password>
+      <label for="passwordConfirmation">Repeat password</label>
+    </span>
+    <app-input-error-message
+      class="error-message"
+      [control]="formGroup.get('passwordConfirmation')!"
+    ></app-input-error-message>
+  </div>
+
+  <p-button
+    type="submit"
+    label="Submit"
+    (click)="submitRegistration()"
+  ></p-button>
+</form>

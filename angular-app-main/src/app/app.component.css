@@ -1,0 +1,8 @@
+.clickable{
+    cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}

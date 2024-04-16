@@ -1,0 +1,35 @@
+<p-toast />
+<p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
+
+@if (!hasRoute('auth')){
+<p-menubar>
+  <ng-template pTemplate="start">
+    <div class="clickable logo" routerLink="/">
+      <img
+        src="https://primefaces.org/cdn/primeng/images/primeng.svg"
+        height="40"
+        class="mr-2"
+      />
+      <span>Home</span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    @if (user !== null){
+    <p-splitButton
+      [label]="user.username"
+      [model]="this.items"
+      rounded
+    ></p-splitButton>
+    } @else {
+    <p-button
+      label="Login"
+      icon="pi pi-user"
+      (onClick)="toLogin()"
+      class="p-button-rounded p-button-text"
+    ></p-button>
+    }
+  </ng-template></p-menubar
+>
+}
+
+<router-outlet />

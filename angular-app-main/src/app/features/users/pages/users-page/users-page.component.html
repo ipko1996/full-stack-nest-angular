@@ -1,0 +1,10 @@
+@if(usersObservable$ | async; as users) {
+<app-users-table
+  [users]="usersData()"
+  [selectedUsers]="selectedUsers"
+  (deleteUserEmitter)="deleteUser($event)"
+></app-users-table>
+} @else {
+<!-- I would rather use this in production ofc https://primeng.org/skeleton -->
+<p>Loading...</p>
+}
