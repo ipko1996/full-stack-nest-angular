@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { NotFoundPageComponent } from './core/pages/not-found-page/not-found-page.component';
 import { authGuard } from './core/auth/guards/auth.guard';
+import { PermissionDeniedComponent } from './core/pages/permission-denied/permission-denied.component';
 
 export const routes: Routes = [
   {
@@ -14,7 +15,10 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/users/pages/users.routes').then((m) => m.UsersRoutes),
   },
-
+  {
+    path: 'permission-denied',
+    component: PermissionDeniedComponent,
+  },
   {
     path: '**',
     component: NotFoundPageComponent,

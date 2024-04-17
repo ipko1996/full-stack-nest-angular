@@ -16,6 +16,8 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
+  // Register user with role?
+  // For now if you want to add ADMIN you can do it in the database
   async register(username: string, password: string, returnTokens = true) {
     this.logger.debug(`Registering user with username: ${username}`);
     const hashedPassword = await hash(password, 10);

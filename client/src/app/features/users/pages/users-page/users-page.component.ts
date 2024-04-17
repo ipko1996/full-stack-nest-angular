@@ -6,6 +6,7 @@ import { User } from '../../../../core/interfaces';
 import { CommonModule } from '@angular/common';
 import { Observable, catchError, first, of, timeout } from 'rxjs';
 import { AuthService } from '../../../../core/auth/services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-users-page',
   standalone: true,
@@ -23,6 +24,7 @@ export class UsersPageComponent implements OnDestroy {
     private userService: UsersService,
     private auth: AuthService,
     private messageService: MessageService,
+    private router: Router,
     private confirmationService: ConfirmationService
   ) {
     if (auth.user()) {
@@ -32,6 +34,14 @@ export class UsersPageComponent implements OnDestroy {
           // Only log error here, Loading ... will stuck but for simplicity I left it like this
           // This could be a nice solution: https://medium.com/angular-in-depth/angular-show-loading-indicator-when-obs-async-is-not-yet-resolved-9d8e5497dd8
           console.error('Error fetching users', error);
+          if (error.status === 403) {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Forbidden',
+              detail: 'You are not allowed to view users',
+            });
+          }
+          this.router.navigate(['/permission-denied']);
           return [];
         })
       );

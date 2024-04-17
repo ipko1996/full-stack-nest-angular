@@ -32,7 +32,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       ) {
         return handle401Error(req, next, auth);
       }
-      auth.logout();
+      // auth.logout();
       return throwError(() => error);
     })
   );
@@ -54,6 +54,7 @@ const handle401Error = (
     catchError((error: HttpErrorResponse) => {
       if (error.status === 403) {
         // Redirect to login page
+        auth.logout();
       }
       return throwError(() => error);
     })

@@ -32,6 +32,9 @@
         </th>
         <!-- <th>Image</th> -->
         <th pSortableColumn="id">ID <p-sortIcon field="ID"></p-sortIcon></th>
+        <th pSortableColumn="role">
+          Role <p-sortIcon field="role"></p-sortIcon>
+        </th>
         <th></th>
       </tr>
     </ng-template>
@@ -56,6 +59,7 @@
           />
         </td> -->
         <td>{{ user.id }}</td>
+        <td>{{ user?.role }}</td>
         <td>
           <!-- <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="edituser(user)"></button> -->
           <button

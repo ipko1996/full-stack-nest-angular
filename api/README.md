@@ -9,6 +9,11 @@ pnpm dlx prisma generate
 pnpm dlx prisma db push
 ```
 
+## Seed the database (this will create admin user)
+```bash
+pnpm dlx prisma db seed
+```
+
 ## Configuration
 
 Copy the `.env.example` file to `.env` and fill in the necessary values.
