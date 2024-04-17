@@ -33,7 +33,6 @@ Each service has its own `README.md` file with instructions on how to run the pr
   - [ ] Add how to run the project
   - [x] Add endpoints documentation
   - [x] Swagger could be added too
-    - [?] Add swagger documentation to all endpoints
 - [x] Add logging with pino for example
 
 ## API Endpoints
@@ -56,11 +55,11 @@ Each service has its own `README.md` file with instructions on how to run the pr
 
 ## Pages
 
-| Route       | Description          | Access    |
-|-------------|----------------------|-----------|
-| /           | Userspage            | PROTECTED |
-| /auth       | Login/Register page  | PUBLIC    |
-| /logout     | Logout page          | PUBLIC    |
+| Route       | Description          | Access    | Role    |
+|-------------|----------------------|-----------|---------|
+| /           | Userspage            | PROTECTED |  ADMIN  |
+| /auth       | Login/Register page  | PUBLIC    |         |
+| /logout     | Logout page          | PUBLIC    |         |
 
 ## Client Featurees
 
@@ -70,13 +69,13 @@ Each service has its own `README.md` file with instructions on how to run the pr
 - [x] User Login
 - [x] User Registration
 - [x] List User
+- [x] RBAC support
 
 - [x] Some unit tests
 
 
 ## Would be nice to add later
-
-- [ ] RBAC support
+- [ ] Add swagger documentation to all endpoints
 - [ ] Add i18n support
 - [ ] Add Docker support
 - [ ] NgRx
