@@ -12,6 +12,9 @@ import { UsersService } from './users.service';
 import { UserDto } from '../common/dto';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from 'src/auth/auth.service';
+import { Roles } from 'src/decorators/roles/roles.decorator';
+import { Role } from '@prisma/client';
+import { RoleGuard } from 'src/guards/role/role.guard';
 
 @Controller('users')
 export class UsersController {
@@ -30,7 +33,8 @@ export class UsersController {
     );
   }
 
-  @UseGuards(AuthGuard(['jwt']))
+  @Roles(Role.ADMIN)
+  @UseGuards(AuthGuard(['jwt']), RoleGuard)
   @Get()
   async findAll() {
     return this.usersService.findAll();

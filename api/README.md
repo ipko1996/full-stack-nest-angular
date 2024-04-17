@@ -4,6 +4,11 @@
 $ pnpm install
 ```
 
+```bash
+pnpm dlx prisma generate
+pnpm dlx prisma db push
+```
+
 ## Configuration
 
 Copy the `.env.example` file to `.env` and fill in the necessary values.

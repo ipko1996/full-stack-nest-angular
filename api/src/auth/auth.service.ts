@@ -110,7 +110,7 @@ export class AuthService {
   async getTokens(username: string, userId: string) {
     const payload = { username, sub: userId };
     const accessToken = this.jwtService.sign(payload, {
-      expiresIn: '30s', // Just for showing that the refresh token works
+      expiresIn: '24h', // Just for showing that the refresh token works
       secret: process.env.ACCESS_TOKEN_SECRET,
     });
     const refreshToken = this.jwtService.sign(payload, {

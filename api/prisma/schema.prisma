@@ -17,7 +17,13 @@ model User {
   id           String  @id @default(auto()) @map("_id") @db.ObjectId
   username     String  @unique
   password     String
+  role         Role    @default(USER)
   refreshToken String? // Could be an array, so user can login from multiple devices
+}
+
+enum Role {
+  USER
+  ADMIN
 }
 
 // For future use
